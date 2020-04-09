@@ -5,13 +5,14 @@ const users = require(path.join(__dirname, '../data/users.json'));
 
 function checkId(req, res) {
   const { id } = req.params;
-  for (let item of users) {
-    if (item._id === id) {
-      res.send(item);
-      return;
-    }
+  const user = users.find((item) => {
+    return item._id === id;
+  });
+  if (user) {
+    res.send(user);
+  } else {
+    res.status(404).send({ "message": "Нет пользователя с таким id" });
   }
-  res.status(404).send({ "message": "Нет пользователя с таким id" });
 }
 
 router.get('/', (req, res) => {
