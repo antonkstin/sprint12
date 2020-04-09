@@ -1,6 +1,7 @@
 const router = require('express').Router();
+const path = require('path');
 
-const users = require('../data/users.json');
+const users = require(path.join(__dirname, '../data/users.json'));
 
 function checkId(req, res) {
   const { id } = req.params;
