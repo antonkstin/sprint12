@@ -1,6 +1,10 @@
+/* eslint-disable quote-props */
 // Объявил экспресс и модуль пути
 const express = require('express');
 const path = require('path');
+
+// eslint-disable-next-line quotes
+const errorMessage = { "message": "Запрашиваемый ресурс не найден" };
 
 // Объявил роуты
 const userRouter = require('./routes/users');
@@ -18,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', userRouter);
 app.use('/cards', cardsRouter);
 app.use('/:nonexistent', (req, res) => {
-  res.status(404).send({ "message": "Запрашиваемый ресурс не найден" });
+  res.status(404).send(errorMessage);
 });
 
 
