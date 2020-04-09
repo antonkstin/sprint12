@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Использую роуты
 app.use('/users', userRouter);
 app.use('/cards', cardsRouter);
-app.get('/:nonexistent', (req, res) => {
+app.use('/:nonexistent', (req, res) => {
   res.status(404).send({ "message": "Запрашиваемый ресурс не найден" });
 });
 
