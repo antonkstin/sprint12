@@ -1,10 +1,11 @@
 {
   "name": "sprint12",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.3",
+  "description": "В данном проекте разработчик учится создавать сервер на express. С помощью него он принимает get-запросы и отдаёт соответствующие ответы. По умолчанию сервер выдает разметку.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Konstantin Mikov",
   "license": "ISC",
